@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tEc/H14mBj4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\khale\\OneDrive - Alexandria University\\Desktop\\SqlOptimizerHelper\\SqlOptimizerHelper\\samples\\SampleWebApi\\SampleWebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\khale\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.7\\microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
+    "C:\\Users\\khale\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
