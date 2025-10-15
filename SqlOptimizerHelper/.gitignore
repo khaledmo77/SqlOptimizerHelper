@@ -8,7 +8,9 @@ out/
 *.suo
 *.userosscache
 *.sln.docstates
-
+# Ignore Visual Studio workspace and build folders
+.vs/
+obj/
 # Ignore VS Code settings
 .vscode/
 
@@ -52,6 +54,5 @@ src/SqlOptimizerHelper/logs/sql-optimizer-report.json
 .DS_Store
 Thumbs.db
 desktop.ini
-```
 
 **This `.gitignore` will exclude build artifacts, user/IDE settings, logs, test results, coverage, and other unnecessary files from your repository.**
