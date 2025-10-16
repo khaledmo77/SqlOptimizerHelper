@@ -1,6 +1,83 @@
-@SampleWebApi_HostAddress = http://localhost:5287
+@SampleWebApi_HostAddress = https://localhost:7000
 
-GET {{SampleWebApi_HostAddress}}/weatherforecast/
+### Test the E-Commerce API with SqlOptimizerHelper
+
+### Get all products (basic query)
+GET {{SampleWebApi_HostAddress}}/api/products
 Accept: application/json
 
-###
+### Search products by name (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/products/search?name=phone
+Accept: application/json
+
+### Get products by category (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/products/category/Electronics
+Accept: application/json
+
+### Get products by price range (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/products/price-range?minPrice=100&maxPrice=500
+Accept: application/json
+
+### Get low stock products (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/products/low-stock?threshold=30
+Accept: application/json
+
+### Get all customers (basic query)
+GET {{SampleWebApi_HostAddress}}/api/customers
+Accept: application/json
+
+### Get customer by email (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/customers/email/john.doe@email.com
+Accept: application/json
+
+### Get customers by city (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/customers/city/New York
+Accept: application/json
+
+### Search customers by name (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/customers/search?name=John
+Accept: application/json
+
+### Get customers with orders - N+1 problem (triggers N+1 detection)
+GET {{SampleWebApi_HostAddress}}/api/customers/with-orders/n1-problem
+Accept: application/json
+
+### Get customers with orders - optimized version
+GET {{SampleWebApi_HostAddress}}/api/customers/with-orders/optimized
+Accept: application/json
+
+### Get all orders (basic query)
+GET {{SampleWebApi_HostAddress}}/api/orders
+Accept: application/json
+
+### Get orders by customer (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/orders/customer/1
+Accept: application/json
+
+### Get orders by status (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/orders/status/Pending
+Accept: application/json
+
+### Get orders by date range (triggers missing index detection)
+GET {{SampleWebApi_HostAddress}}/api/orders/date-range?startDate=2024-01-01&endDate=2024-12-31
+Accept: application/json
+
+### Get orders with N+1 problem (triggers N+1 detection)
+GET {{SampleWebApi_HostAddress}}/api/orders/n1-problem
+Accept: application/json
+
+### Get orders - optimized version
+GET {{SampleWebApi_HostAddress}}/api/orders/optimized
+Accept: application/json
+
+### Get orders with items - N+1 problem (complex N+1 detection)
+GET {{SampleWebApi_HostAddress}}/api/orders/with-items/n1-problem
+Accept: application/json
+
+### Get orders with items - optimized version
+GET {{SampleWebApi_HostAddress}}/api/orders/with-items/optimized
+Accept: application/json
+
+### Get API information
+GET {{SampleWebApi_HostAddress}}/
+Accept: application/json
